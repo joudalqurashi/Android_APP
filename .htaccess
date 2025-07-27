@@ -1,0 +1,16 @@
+# Enable PHP processing
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .phps
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Enable CORS
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type"
+
+# Force PHP processing for .php files
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch> 
